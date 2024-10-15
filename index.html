@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TO-DO-List</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Things
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" target="_blank" href="">Reminder</a></li>
+                <li><a class="dropdown-item" target="_blank" href="">Contact</a></li>
+                <li><hr class="dropdown-divider" /></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Contact</a>
+            </li>
+            <br />
+            <button onclick="darkMode()" class="mode-btn">Dark Mode</button>
+            <button onclick="lightMode()" class="mode-btn">Light Mode</button>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-4">
+      <h2 class="text-center">TODO List</h2>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" aria-describedby="emailHelp" />
+        <small id="emailHelp" class="form-text text-muted">Add an item to the list</small>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" rows="3"></textarea>
+      </div>
+      <br />
+      <div>
+        <button id="add" class="btn btn-primary">Add to list</button>
+        <button id="clear" class="btn btn-primary" onclick="clearStorage()">Clear list</button>
+      </div>
+
+      <div id="items" class="my-4">
+        <h2>Your Items</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="form-text text-muted">SNo</th>
+              <th scope="col" class="form-text text-muted">Item Title</th>
+              <th scope="col" class="form-text text-muted">Item Description</th>
+              <th scope="col" class="form-text text-muted">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <th scope="row">1</th>
+              <td>student</td>
+              <td>you have to go to class</td>
+              <td><button class="btn btn-sm btn-primary">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
